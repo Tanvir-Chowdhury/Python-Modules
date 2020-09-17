@@ -58,4 +58,11 @@ print(getattr(red, "r"))
 
 print(red._asdict())
 
-print(colors._make["1","2","3"])
+print(colors._make(["1","2","3"]))
+
+print(colors(**{"r" : 255, "g" : 0, "b" : 0}))
+
+print(red._fields)
+
+print(red._replace(g = 3))
+print(red)

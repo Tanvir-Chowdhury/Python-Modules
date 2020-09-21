@@ -28,4 +28,3 @@ mydict = dd(int)
 for i in name:
     mydict[i] += 1
 print(mydict)
-

@@ -41,3 +41,4 @@ print(d.time())
 td = datetime.timedelta(365, 50, 55555, 411111, 2, 20, 5)
 print(td)
 
+print(time.asctime())

@@ -3,8 +3,8 @@ import numpy as np
 import pickle
 
 data_dict = {
-    "volts" : np.random.random(10),
-    "currents" : np.random.random(10)
+    "volts" : np.random.rand(10),
+    "currents" : np.random.rand(10)
 }
 
 with open("data_pick.pkl", "wb") as data_pickle:

@@ -4,8 +4,8 @@ from pprint import pformat
 import logging
 
 data = {
-    "colts" : np.random.random(10),
-    "aurrents" : np.random.random(20)
+    "colts" : np.random.rand(10),
+    "aurrents" : np.random.rand(20)
 }
 
 pprint(data)

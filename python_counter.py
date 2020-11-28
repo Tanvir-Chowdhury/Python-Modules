@@ -10,6 +10,8 @@ print(issubclass(Counter, dict))
 c.update("helloh")
 print(c)
 
+print()
+
 e = Counter("Hello")
 for i in "help":
     print(f'{i} : {e[i]}')

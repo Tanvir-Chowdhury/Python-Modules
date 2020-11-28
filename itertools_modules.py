@@ -4,6 +4,8 @@ from itertools import dropwhile, groupby
 for i in takewhile(lambda x:x<10, [1,2,3,10,11,12,4,15]):  # takewhile 
     print(i)
 
+print()
+
 for k in tee([1,2,3,4,5], 3): # tee
     for l in k:
         print(l)
@@ -31,4 +33,4 @@ for i in dropwhile(lambda x:x<7, [1,2,3,7,4]): # dropwhile
     print(i)
 
 for i,j in groupby("AAAAABBBBBCCCCDDDAAAABAC"): # groupby
-    print(list(j))
+    print(f"{i} : {list(j)}")

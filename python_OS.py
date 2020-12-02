@@ -9,3 +9,4 @@ print(os.getcwd())
 
 print(os.popen("cp text1 text2"))  #we can os.system also
 
+print(os.listdir())

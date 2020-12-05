@@ -24,9 +24,8 @@ if __name__ == "__main__":
 
 
 
-'''from zipfile import ZipFile
+from zipfile import ZipFile
 
-with Zipfile("my_python_zip.zip", "r") as zip:
+with ZipFile("my_python_zip.zip", "r") as zip:
     zip.printdir()
-    zip.extractall(filenames)
-'''
+    zip.extractall()

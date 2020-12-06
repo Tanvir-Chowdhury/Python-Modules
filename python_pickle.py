@@ -1,6 +1,5 @@
 import pickle
 import numpy as np
-import pickle
 
 data_dict = {
     "volts" : np.random.rand(10),

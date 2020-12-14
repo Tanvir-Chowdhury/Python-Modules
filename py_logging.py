@@ -48,7 +48,7 @@ logging.debug(mul_result)
 logging.debug(div_result)'''
 
 
-logger = logging.getLogger(__name__)
+'''logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 formatter = logging.Formatter('%(filename)s : %(funcName)s : %(threadName)s : %(levelname)s : %(name)s : %(message)s')
@@ -61,9 +61,11 @@ stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(formatter)
 
 logger.addHandler(file_handler)
-logger.addHandler(stream_handler)
+logger.addHandler(stream_handler)'''
 
 #logging.basicConfig(filename = 'employee.log', level = logging.INFO, format = '%(filename)s : %(funcName)s : %(threadName)s : %(levelname)s : %(name)s : %(message)s')
+
+import requests
 
 class Employee:
 
@@ -71,7 +73,8 @@ class Employee:
         self.first = first
         self.last = last 
 
-        logger.info(f"created employee : {self.fullname} - {self.email}")
+        #logger.info(f"created employee : {self.fullname} - {self.email}")
+        print(f"created employee : {self.fullname} - {self.email}")
 
     @property
     def email(self):
@@ -80,6 +83,13 @@ class Employee:
     @property
     def fullname(self):
         return f"{self.first} {self.last}"
+
+    def monthly_schedule(self, month):
+        response = requests.get(f"http://company.com/{self.last}/{month}")
+        if response.ok:
+            return response.text
+        else :
+            return "Bad response!"
 
 em1 = Employee('Tanvir', 'Chowdhury')
 em2 = Employee('Tanim', 'Chowdhury')

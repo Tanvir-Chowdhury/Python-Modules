@@ -1,7 +1,8 @@
 import unittest
 import calc
-import py_logging
+import test.py_logging
 from unittest.mock import patch
+import requests
 
 class Testcalc(unittest.TestCase):
 
@@ -26,15 +27,15 @@ class Testcalc(unittest.TestCase):
         self.assertRaises(ValueError, calc.div, 10, 0)
 
     def test_monthly_schedule(self):
-        self.em1 = py_logging.Employee("Tanvir", "Chowdhury")
-        with patch("Employee.requests.get") as mocked_get:
+        self.em1 = test.py_logging.Employee("Tanvir", "Chowdhury")
+        with patch("test.py_logging.requests.get") as mocked_get:
             mocked_get.return_value.ok = True
             mocked_get.return_value.text = "Success!"
 
             schedule = self.em1.monthly_schedule("May")
 
-            mocked_get.assert_called_with("http://company.com/Schefar/May")
-            self.assertEqual(schedule, "Success!")
+            mocked_get.assert_called_with("http://company.com/Chowdhury/June")
+            self.assertEqual(schedule, "Bad response!")
 
 if __name__ == "__main__":
     unittest.main()

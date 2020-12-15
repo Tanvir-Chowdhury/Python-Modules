@@ -1,4 +1,4 @@
-import os
+import os, glob
 
 '''print(os.access("ordered_dict.py", os.X_OK))
 print(os.access("ordered_dict.py", os.F_OK))
@@ -18,3 +18,6 @@ db_pass = os.environ.get("DB_PASS")
 
 print(db_user)
 print(db_pass)
+
+for file in glob.glob("*.py"):
+    print(file)

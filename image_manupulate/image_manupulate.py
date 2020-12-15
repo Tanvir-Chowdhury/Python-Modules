@@ -3,7 +3,7 @@ import glob, os, shutil
 
 os.chdir('/home/codinxter/Desktop/Python_Projects/Python_modules/Python-Modules/image_manupulate')
 
-'''image1 = Image.open("sample.jpg")
+image1 = Image.open("sample.jpg")
 image1.show()   #It opens the picture to show
 image1.rotate(90).save("sample90.png") #rotates the image
 image1.convert(mode= "L").save("sample_black_and_white.jpg") # turns an colorful image into black and white
@@ -24,9 +24,9 @@ for file in glob.glob("*.jpg"):
 #translating all jpg in png 2
 for f in os.listdir('.'):
     if f.endswith(".png"):
-        i = Image.open(f)'''
+        i = Image.open(f)
 
-
+# moving into another directory
 os.mkdir("png_files")
 for file in glob.glob("*.png"):
     shutil.move(f"/home/codinxter/Desktop/Python_Projects/Python_modules/Python-Modules/image_manupulate/{file}", "/home/codinxter/Desktop/Python_Projects/Python_modules/Python-Modules/image_manupulate/png_files")

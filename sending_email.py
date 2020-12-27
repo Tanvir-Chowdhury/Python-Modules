@@ -2,7 +2,7 @@ import smtplib
 import os
 
 EMAIL_USER = "tanvirvlogger@gmail.com"
-EMAIL_PASS = "TanvirTheFunkeyBoy"
+EMAIL_PASS = ""
 
 with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
     smtp.ehlo()

@@ -6,7 +6,8 @@ from email.message import EmailMessage
 EMAIL_USER = os.environ.get("EMAIL_USER")
 EMAIL_PASS = os.environ.get("EMAIL_PASS")
 
-'''with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
+# this send youself a msg
+with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
     smtp.ehlo()
     smtp.starttls()
     smtp.ehlo()
@@ -17,9 +18,9 @@ EMAIL_PASS = os.environ.get("EMAIL_PASS")
     body = "your website is down"
     msg = f"subject: {subject} \n\n {body}"
 
-    smtp.sendmail(EMAIL_USER, "tanvirchowdhury6465@gmail.com", msg)'''
+    smtp.sendmail(EMAIL_USER, "tanvirchowdhury6465@gmail.com", msg)
 
-
+# from here this mail system is well organized
 msg = EmailMessage()
 msg['Subject'] = 'website down'
 msg['From'] = EMAIL_USER

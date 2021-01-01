@@ -1,7 +1,7 @@
 import aiohttp
 import asyncio
 
-'''async def make_request():
+async def make_request():
     url = "https://example.com"
     print(f"making request to {url}")
     async with aiohttp.ClientSession() as session :
@@ -23,7 +23,7 @@ async def make_requests():
                 print(await resp.text())
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(make_requests())'''
+loop.run_until_complete(make_requests())
 
 
 

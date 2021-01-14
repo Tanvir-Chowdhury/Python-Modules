@@ -7,5 +7,10 @@
     "python.testing.nosetestsEnabled": false,
     "python.testing.pytestEnabled": true,
     "ponicode.testSettings.testLocation.locationType": "Same folder as source file",
-    "ponicode.testSettings.testLocation.path": "{rootDir}/{filePath}/{fileName}.test.{ext}"
+    "ponicode.testSettings.testLocation.path": "{rootDir}/{filePath}/{fileName}.test.{ext}",
+    "terminal.integrated.shell.windows": "cmd.exe",
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.fontFamily": "monospace"
+    
 }

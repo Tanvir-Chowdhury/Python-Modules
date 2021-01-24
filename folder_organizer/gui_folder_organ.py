@@ -28,11 +28,17 @@ _browse_btn= ttk.Button(_dir_frame, text ='Browse', command =browse_dir)
 _browse_btn.grid(row=0, column = 1, sticky = (W))
 
 extension_files = {
-    'document' : ['.doc', '.docx', '.pdf', '.html', '.htm', '.xml', '.txt', '.odt', '.xls', '.xlsx', '.ods', '.ppt', '.pptx'] ,
-    'image' : ['.png', '.gif', '.jpg', '.jpeg', '.tiff', '.raw'],
-    'compressed_file' : ['.zip', '.rar'],
-    'application' : ['.exe'],
-    'video' : ['.avi', '.mp4', '.mpeg', '.mkv', '.wmv', '.mov', '.flv', '.webm', '.mpv']
+    'document' : ['.doc', '.docx', '.pdf', '.txt', '.odt', '.xls', '.xlsx', '.ods', '.ppt', '.pptx', '.wpd'] ,
+    'image' : ['.png', '.gif', '.jpg', '.jpeg', '.tiff', '.raw', '.ai', '.bmp', '.ico', '.ps', '.psd', '.svg', '.tif', '.tiff'],
+    'compressed_file' : ['.zip', '.rar', '.z', '.pkg', '.deb', '.7z', '.rpm', '.tar.gz', '.arj'],
+    'executable' : ['.exe', '.apk', '.bat', '.bin', '.cgi', '.pl', '.com', '.gadget', '.jar', '.msi', '.wsf'],
+    'video' : ['.avi', '.mp4', '.mpeg', '.mkv', '.wmv', '.mov', '.flv', '.webm', '.mpv', '. 3g2', '.3gp', '.h264', '.m4v', '.rm'],
+    'code' : ['.py', '.c', '.swift', '.vb', '.h' , '.cs', '.cpp', '.class', '.sh'],
+    'internet_related' : ['.asp', '.aspx', '.cer', '.cpm', '.js', '.html', '.htm', '.css', '.jsp', '.part', '.php', '.rss', '.xhtml'],
+    'audio' : ['.wav', '.mp3', '.mpa', '.aif', '.wpl'],
+    'database' : ['.xml', '.csv', '.db', '.dbf', '.mdb', '.log', '.dat', '.sav', '.sql', '..tar'],
+    'fonts' : ['.fnt', '.fon', '.otf', '.ttf'],
+    'system' : ['.bak', '.cab', '.cfg', '.cpl', '.cur', '.dll', '.dmp', '.drv' , '.icns', '.ini', '.sys', '.tmp']
 }
 
 def organize():  

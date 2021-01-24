@@ -32,7 +32,7 @@ extension_files = {
     'image' : ['.png', '.gif', '.jpg', '.jpeg', '.tiff', '.raw'],
     'compressed_file' : ['.zip', '.rar'],
     'application' : ['.exe'],
-    'video' : ['.avi', '.mp4', '.mpeg']
+    'video' : ['.avi', '.mp4', '.mpeg', '.mkv', '.wmv', '.mov', '.flv', '.webm', '.mpv']
 }
 
 def organize():  
@@ -44,7 +44,7 @@ def organize():
         name , ext = os.path.splitext(file)
         try : 
             for key, value in extension_files.items():
-                if  ext in value :
+                if  ext.lower() in value :
                     filename = key
                     if not os.path.isdir(os.path.join(directory, filename)): 
                         os.mkdir(os.path.join(directory, filename))

@@ -1,6 +1,7 @@
 import pygame
 import random
 import math
+from pygame import mixer
 
 #Initialize
 pygame.init()
@@ -10,6 +11,10 @@ screen = pygame.display.set_mode((800, 600))
 
 #background
 background = pygame.image.load(r"D:\Python projects\Python-modules\Python-Modules\Pygame\background.png")
+
+#background sound
+mixer.music.load(r'D:\Python projects\Python-modules\Python-Modules\Pygame\background.wav')
+mixer.music.play(-1)
 
 #title
 pygame.display.set_caption("Space Invaders")
@@ -53,10 +58,17 @@ scorex = 10
 scorey = 10
 font = pygame.font.Font('freesansbold.ttf', 32)
 
+#game over text
+over_font = pygame.font.Font('freesansbold.ttf', 64)
+
 def show_score(x, y):   
     score_show = font.render('Score : ' + str(score), True, (255, 255, 255))
     screen.blit(score_show, (x, y))
 
+def game_over_text():
+    over_show = over_font.render('GAME OVER', True, (255, 255, 255))
+    screen.blit(over_show, (200, 250))
+    
 def player(x, y):   
     screen.blit(playerImg, (x, y))
 
@@ -95,6 +107,8 @@ while running:
                 playerx_change = 5
             if event.key == pygame.K_SPACE:
                 if bullet_state == 'ready':
+                    bullet_sound = mixer.Sound(r'D:\Python projects\Python-modules\Python-Modules\Pygame\laser.wav')
+                    bullet_sound.play()
                     bulletx = playerx
                     fire_bullet(bulletx, bullety)
         
@@ -112,6 +126,14 @@ while running:
     
     #enemy movement
     for i in range(num_of_enemy):
+        
+        #game over
+        if enemyy[i] > 420:
+            for j in range(num_of_enemy):
+                enemyy[j] = 2000
+            game_over_text()
+            break
+        
         enemyx[i] += enemyx_change[i]
         if enemyx[i] <= 1 :  
             enemyx_change[i] = 6
@@ -122,6 +144,8 @@ while running:
 
         collision = isCollision(enemyx[i], enemyy[i], bulletx, bullety)
         if collision:  
+            collision_sound = mixer.Sound(r'D:\Python projects\Python-modules\Python-Modules\Pygame\explosion.wav')
+            collision_sound.play()
             bullety = 480
             bullet_state = 'ready'
             score += 5

@@ -10,21 +10,21 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 
 #background
-background = pygame.image.load(r"D:\Python projects\Python-modules\Python-Modules\Pygame\background.png")
+background = pygame.image.load(r"D:\Python projects (vscode)\Python-modules\Python-Modules\Pygame\background.png")
 
 #background sound
-mixer.music.load(r'D:\Python projects\Python-modules\Python-Modules\Pygame\background.wav')
+mixer.music.load(r'D:\Python projects (vscode)\Python-modules\Python-Modules\Pygame\background.wav')
 mixer.music.play(-1)
 
 #title
 pygame.display.set_caption("Space Invaders")
 
 #icon
-icon = pygame.image.load(r"D:\Python projects\Python-modules\Python-Modules\Pygame\ufo.png")
+icon = pygame.image.load(r"D:\Python projects (vscode)\Python-modules\Python-Modules\Pygame\ufo.png")
 pygame.display.set_icon(icon)
 
 #player
-playerImg = pygame.image.load(r'D:\Python projects\Python-modules\Python-Modules\Pygame\battleship.png')
+playerImg = pygame.image.load(r'D:\Python projects (vscode)\Python-modules\Python-Modules\Pygame\battleship.png')
 playerx = 370
 playery = 480
 playerx_change = 0
@@ -38,14 +38,14 @@ enemyy_change = []
 num_of_enemy = 7
 
 for i in range(num_of_enemy):
-    enemyImg.append(pygame.image.load(r'D:\Python projects\Python-modules\Python-Modules\Pygame\enemy.png'))
+    enemyImg.append(pygame.image.load(r'D:\Python projects (vscode)\Python-modules\Python-Modules\Pygame\enemy.png'))
     enemyx.append(random.randint(0, 736))
     enemyy.append(random.randint(50, 150))
     enemyx_change.append(6)
     enemyy_change.append(40)
 
 #bullet
-bulletImg = pygame.image.load(r'D:\Python projects\Python-modules\Python-Modules\Pygame\bullet.png')
+bulletImg = pygame.image.load(r'D:\Python projects (vscode)\Python-modules\Python-Modules\Pygame\bullet.png')
 bulletx = 0
 bullety = 480
 bulletx_change = 0
@@ -107,7 +107,7 @@ while running:
                 playerx_change = 5
             if event.key == pygame.K_SPACE:
                 if bullet_state == 'ready':
-                    bullet_sound = mixer.Sound(r'D:\Python projects\Python-modules\Python-Modules\Pygame\laser.wav')
+                    bullet_sound = mixer.Sound(r'D:\Python projects (vscode)\Python-modules\Python-Modules\Pygame\laser.wav')
                     bullet_sound.play()
                     bulletx = playerx
                     fire_bullet(bulletx, bullety)
@@ -144,7 +144,7 @@ while running:
 
         collision = isCollision(enemyx[i], enemyy[i], bulletx, bullety)
         if collision:  
-            collision_sound = mixer.Sound(r'D:\Python projects\Python-modules\Python-Modules\Pygame\explosion.wav')
+            collision_sound = mixer.Sound(r'D:\Python projects (vscode)\Python-modules\Python-Modules\Pygame\explosion.wav')
             collision_sound.play()
             bullety = 480
             bullet_state = 'ready'

@@ -25,7 +25,6 @@ pattern = re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z]+\.(com|edu)')
 
 matcher = pattern.finditer(text_to_speech)
 
-
 #for match in matcher:
     #email = match.group(0)
 
